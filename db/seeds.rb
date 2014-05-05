@@ -1,7 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+users = User.create([
+          {name: "Deborah Field", email: "debbie@gardenshare.org", description: "I have a space between two buildings. It is currently grass. It is probably 20 x 50 feet. There is water available. I can vision a organic garden where some of the produce is sold or given away to the needy. All soil preparation, seeds and plants, and maintenance is the responsibility of the users. Details to be discussed and written agreement created."},
+          {name: "Claudia Baskind", email: "claudie@gardenshare.org", description: "have front and back garden space to share--details negotiable but would like to have a range of hours each week that we cooperatively garden together for inspiration and efficiency. after getting established/knowing each other, folks could garden at other times too"},
+          {name: "Jamie Flanagan", email: "jamie@gardenshare.org", description: "We have a small yard, and I'll be gardening in it, but I'd love to share the yield and get to know my neighbors."}
+        ])
