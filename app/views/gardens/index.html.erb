@@ -1,3 +1,13 @@
-<h1>Thin Fruits</h1>
+<h1>Garden Sharing</h1>
 
 <p>Deciduous fruits trees such as peaches, apricots, plums and cherries that have flowered and set fruit need to have some of those fruits removed or thinned. Many fruits trees will set more fruits than they can mature. By thinning some fruits now, you'll get larger and tastier mature fruits later. Thin these fruits to about 4 to 6 inches apart on the branch as soon as the fruits are as large as a quarter.<p>
+
+<% @gardens.each do |g| %>
+	<% results = Geocoder.search(g.location) %>
+	<h2><%= g.location %></h2> <br>
+	<h3><%= results[0].data["address_components"][2]["long_name"] %></h3><br>
+	<%= results[0].data["address_components"][7]["long_name"] %>
+	<%= g.description %><br>
+<% end %>
+
+<%= link_to 'sign out', destroy_user_session_path, method: :delete %>

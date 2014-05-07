@@ -1,7 +1,9 @@
 GardenShare::Application.routes.draw do
   devise_for :users
   root to: 'gardens#index'
-  resources :gardens
+  authenticated :user do
+    resources :gardens
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
