@@ -3,11 +3,20 @@
 <p>Deciduous fruits trees such as peaches, apricots, plums and cherries that have flowered and set fruit need to have some of those fruits removed or thinned. Many fruits trees will set more fruits than they can mature. By thinning some fruits now, you'll get larger and tastier mature fruits later. Thin these fruits to about 4 to 6 inches apart on the branch as soon as the fruits are as large as a quarter.<p>
 
 <% @gardens.each do |g| %>
-	<% results = Geocoder.search(g.location) %>
-	<h2><%= g.location %></h2> <br>
-	<h3><%= results[0].data["address_components"][2]["long_name"] %></h3><br>
-	<%= results[0].data["address_components"][7]["long_name"] %>
-	<%= g.description %><br>
+	<% results = Geocoder.search(g.address + " " + g.city) %>
+	<h3><%= g.address %></h3>
+	<%= results[0].data["address_components"][2]["long_name"].upcase %> | <%= results[0].data["address_components"][7]["long_name"] %>
+	<li><i>description:</i> <%= g.garden_description %></li>
+	<li><i>relationship:</i> <%= g.relationship_desired %></li>
 <% end %>
-
-<%= link_to 'sign out', destroy_user_session_path, method: :delete %>
+<script type="text/javascript">
+    window.onload = function() {
+        L.map('map', {
+            layers: MQ.mapLayer(),
+            center: [ 37.824722, -122.279816 ],
+            zoom: 13
+        });
+        marker = new L.marker([ 37.824722, -122.279816 ]).addTo(map);
+    };
+</script>
+<div id="map"></div>
