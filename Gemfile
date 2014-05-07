@@ -36,6 +36,9 @@ end
 
 group :development, :test do
   gem 'dotenv-rails'
+  gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'better_errors'
 end
 
 group :production do
