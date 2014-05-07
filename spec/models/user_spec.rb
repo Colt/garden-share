@@ -35,6 +35,7 @@ describe User do
       user.should_not be_valid
     end
   end
+  # it 'password should be at least 6 characters'
   it 'should have a description' do
     user = User.create(name: "Eve", email: "evelyn@eden.org")
     user.should_not be_valid

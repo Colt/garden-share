@@ -26,6 +26,10 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     arel (4.0.2)
+    bcrypt-ruby (3.1.2)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
     builder (3.1.4)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -137,6 +141,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby (= 3.1.2)
+  better_errors
   coffee-rails (~> 4.0.0)
   dotenv-rails
   jbuilder (~> 1.2)
