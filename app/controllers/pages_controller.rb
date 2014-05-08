@@ -1,16 +1,7 @@
 class PagesController < ApplicationController
   def landing
-  end
-
-  def finding
-  end
-
-  def sharing
-  end
-
-  def helping
-  end
-
-  def learning
+    if current_user && current_user.garden_id != 0
+      redirect_to "/gardens/#{current_user.garden_id}"
+    end
   end
 end

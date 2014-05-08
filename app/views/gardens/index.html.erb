@@ -1,8 +1,14 @@
 <h1>Gardens.</h1>
+<% if current_user.garden_id == 0 || current_user.garden_id == nil %>
+	<%= button_to 'add a garden', new_garden_path, method: :get %>
+<% end %>
+
 
 <% @gardens.each do |g| %>
+<a href="/gardens/<%= g.id %>" style="text-decoration:none;color:black;"><article>
   <%= image_tag g.photo.url(:thumb) %><br>
   <b><%= g.neighborhood %> | <%= g.city %></b><br>
   <%= g.short_description %><br>
+</article></a>
   <br>
 <% end %>

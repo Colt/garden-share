@@ -14,6 +14,7 @@
 </head>
 <body style="font-family:sans-serif;">
 <% if current_user %>
+  <%= link_to 'gardens', gardens_path %>
 	<%= link_to 'sign out', destroy_user_session_path, method: :delete %>
 <% else %>
 	<%= link_to 'sign in', new_user_session_path %> 

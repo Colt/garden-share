@@ -1,9 +1,10 @@
 class GardensController < ApplicationController
   before_action :authenticate_user!, only: [:new, :credit, :show, :edit, :update, :destroy]
+  before_action :lookup, except: [:index, :new, :create]
   
   def index
     @gardens = Garden.all
-    #@gardens.sort_by! { |g| g.zipcode}
+    @gardens.sort_by! { |g| g.zipcode}
   end
 
   def new
@@ -23,20 +24,34 @@ class GardensController < ApplicationController
     @garden.neighborhood = g[0].data["address_components"][2]["long_name"]
     @garden.zipcode = g[0].data["address_components"][7]["long_name"]
     @garden.save
-    current_user.garden_id = @garden.id
-    current_user.save
-
+    
+    unless current_user.garden_id == 0
+      current_user.garden_id = @garden.id
+      current_user.save
+    end
     redirect_to gardens_path
   end
 
   def show
-    @garden = Garden.find(params[:id])
+  end
+
+  def edit
   end
 
   def update
+    @garden.update garden_params
+    redirect_to garden_path
   end
 
   def destroy
+    @garden.destroy
+    current_user.garden_id = nil
+    current_user.save
+    redirect_to gardens_path
+  end
+
+  def lookup
+    @garden = Garden.find(params[:id])
   end
 
   private

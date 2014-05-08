@@ -8,9 +8,14 @@
 <h3>Description:</h3><%= @garden.description %>
 <h3>Guidelines:</h3><%= @garden.rules %>
 <br>
-<% binding.pry %>
-<%= @garden.users.first.name %><br>
-<%= @garden.users.first.email %>
 
+
+<% if current_user.garden_id == 0 || current_user.id == @garden.users.first.id %>
+	<%= button_to 'edit', edit_garden_path, method: :get %>
+	<%= button_to 'delete', @garden, method: :delete %>
+<% else %>
+	<%= @garden.users.first.name %><br>
+	<%= mail_to @garden.users.first.email, 'contact host', subject: 'Garden Share: I would like to learn more about your garden.', body: current_user.name %>
+<% end %>
 <br>
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x300&sensor=false&zoom=15&markers=#{@garden.geo_location}" %>
