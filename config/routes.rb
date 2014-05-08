@@ -1,8 +1,8 @@
 GardenShare::Application.routes.draw do
   root to: 'pages#landing'
-  
-  resources :gardens 
-  
+ 
+  resources :gardens
+
   devise_for :users, :skip => [:sessions]
   
   as :user do

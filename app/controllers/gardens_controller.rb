@@ -1,5 +1,5 @@
 class GardensController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :credit, :show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index, :new, :credit, :show, :edit, :update, :destroy]
   before_action :lookup, except: [:index, :new, :create]
   
   def index

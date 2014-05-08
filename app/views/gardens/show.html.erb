@@ -17,5 +17,7 @@
 	<%= @garden.users.first.name %><br>
 	<%= mail_to @garden.users.first.email, 'contact host', subject: 'Garden Share: I would like to learn more about your garden.', body: current_user.name %>
 <% end %>
+
 <br>
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x300&sensor=false&zoom=15&markers=#{@garden.geo_location}" %>
+<%= render "/layouts/footer" %>

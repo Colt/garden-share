@@ -1,17 +1,5 @@
 <h1>Garden Share.</h1>
 
-<p>Find a space to garden in your neighborhood:
-	<!-- <form>
-	 	<select>
-  		<option value="San Francisco">San Francisco</option>
-  		<option value="Oakland">Oakland</option>
-  		<option value="Berkeley">Berkeley</option>
-		</select> 
-		<input type="submit" value="go"></input>
-	</form>	-->
-	<%#= button_to 'go', nil, gardens_path %>
-<ul>
-	<li>Find a garden.</li>
-	<li>Share a garden.</li>
-	<li>Help out.</li>
-</ul>
+<%= button_to 'start gardening', new_user_registration_path, method: :get %>
+
+<%= render "/layouts/footer" %>

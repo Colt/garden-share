@@ -1,3 +1,3 @@
 #garden-share
 
-A Rails application for connecting gardeneres to each other.
+A Rails application for connecting gardeners to each other.
