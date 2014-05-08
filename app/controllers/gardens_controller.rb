@@ -3,6 +3,7 @@ class GardensController < ApplicationController
   
   def index
     @gardens = Garden.all
+    #@gardens.sort_by { |g| g.zipcode}
   end
 
   def new
@@ -21,8 +22,9 @@ class GardensController < ApplicationController
     @garden.geo_location = geo_location_array.join(", ")
     @garden.neighborhood = g[0].data["address_components"][2]["long_name"]
     @garden.zipcode = g[0].data["address_components"][7]["long_name"]
-    current_user.garden_id = @garden.id
     @garden.save
+    current_user.garden_id = @garden.id
+    current_user.save
 
     redirect_to gardens_path
   end

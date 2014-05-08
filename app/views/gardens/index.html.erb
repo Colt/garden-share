@@ -1,3 +1,7 @@
 <h1>Gardens.</h1>
 
-<%= @gardens.all %>
+<% @gardens.each do |g| %>
+  <b><%= g.neighborhood %></b><br>
+  <%= g.short_description %><br>
+  <br>
+<% end %>

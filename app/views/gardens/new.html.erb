@@ -1,6 +1,7 @@
 							<%= form_for @garden do |f| %>
   Address : 		<%= f.text_field :address %><br />
   City : 				<%= f.text_field :city %><br />
+  Short Description: <%= f.text_field :short_description
   Description : <%= f.text_area :description %><br />
   Rules    : 		<%= f.text_area :rules %><br />
     							<%= f.submit 'create' %>
