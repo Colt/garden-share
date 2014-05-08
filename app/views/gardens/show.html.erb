@@ -7,8 +7,10 @@
 <h3>Short Description:</h3><%= @garden.short_description %>
 <h3>Description:</h3><%= @garden.description %>
 <h3>Guidelines:</h3><%= @garden.rules %>
-
-<%#= @garden.users.first.name %>
+<br>
+<% binding.pry %>
+<%= @garden.users.first.name %><br>
+<%= @garden.users.first.email %>
 
 <br>
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x300&sensor=false&zoom=16&markers=#{@garden.geo_location}" %>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x300&sensor=false&zoom=15&markers=#{@garden.geo_location}" %>

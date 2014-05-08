@@ -1,9 +1,9 @@
 class GardensController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :credit, :show, :edit, :update, :destroy]
   
   def index
     @gardens = Garden.all
-    #@gardens.sort_by { |g| g.zipcode}
+    #@gardens.sort_by! { |g| g.zipcode}
   end
 
   def new
