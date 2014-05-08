@@ -1,6 +1,7 @@
 <h1>Gardens.</h1>
 
 <% @gardens.each do |g| %>
+  <%= image_tag g.photo.url(:thumb) %><br>
   <b><%= g.neighborhood %></b><br>
   <%= g.short_description %><br>
   <br>

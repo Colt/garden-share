@@ -1,5 +1,6 @@
 <%= @garden.inspect %>
 <hr>
+<%= image_tag @garden.photo.url(:medium) %>
 <h3>Address:</h3><%= @garden.address %>
 <h3>Neighborhood:</h3><%= @garden.neighborhood %>
 <h3>City:</h3><%= @garden.city %> (<%= @garden.zipcode %>)
@@ -7,7 +8,7 @@
 <h3>Description:</h3><%= @garden.description %>
 <h3>Guidelines:</h3><%= @garden.rules %>
 
-<%= @garden.users.first.name %>
+<%#= @garden.users.first.name %>
 
 <br>
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x300&sensor=false&zoom=16&markers=#{@garden.geo_location}" %>
