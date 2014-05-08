@@ -11,19 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507072701) do
+ActiveRecord::Schema.define(version: 20140508001703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "gardens", force: true do |t|
     t.string   "address"
-    t.text     "garden_description"
+    t.string   "neighborhood"
+    t.string   "city"
+    t.string   "zipcode"
+    t.string   "geo_location"
+    t.text     "description"
+    t.text     "rules"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "city"
-    t.string   "relationship_desription"
-    t.text     "relationship_desired"
   end
 
   create_table "users", force: true do |t|
@@ -39,9 +41,11 @@ ActiveRecord::Schema.define(version: 20140507072701) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "garden_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["garden_id"], name: "index_users_on_garden_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

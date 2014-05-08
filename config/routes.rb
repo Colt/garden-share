@@ -1,9 +1,19 @@
 GardenShare::Application.routes.draw do
-  devise_for :users
-  root to: 'gardens#index'
-  authenticated :user do
-    resources :gardens
+  root to: 'pages#landing'
+  resources :pages
+  resources :gardens
+  
+  devise_for :users, :skip => [:sessions]
+  
+  as :user do
+    get 'signin' => 'devise/sessions#new', :as => :new_user_session
+    post 'signin' => 'devise/sessions#create', :as => :user_session
+    delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
   end
+## add a route for 'signup' 
+  
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
