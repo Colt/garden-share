@@ -82,7 +82,7 @@ h1 {
 }
 h2 {
 	font-size: 3em;
-	margin: 0;
+	margin: 20px;
 	font-weight: normal;
 }
 h3 {
@@ -113,15 +113,17 @@ textarea#garden_rules {
 	padding: 0;
 	margin: 10px;
 	max-width: 90%;
-	/*display: inline-block;*/
-	/*vertical-align: top;*/
+}
+.show {
+	display: inline-block;
+	vertical-align: top;
+	display:none;
 }
 .map {
 	display: inline-block;
 }
 .short_description {
 	padding: 5px 20px 5px 20px;
-	text-align: left;
 }
 .neighborhood, .city {
 	font-size: 1.5em;
@@ -132,3 +134,9 @@ textarea#garden_rules {
 	text-align: left;
 	display: inline-block;
 }
+
+@media only screen and (min-width : 1224px) {
+		.garden_info {
+			max-width: 50%;
+		}
+	}

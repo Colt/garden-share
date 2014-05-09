@@ -1,4 +1,4 @@
-<footer>
+<header>
 <% if current_user %>
 	<% if request.env['PATH_INFO'] != gardens_path %>
   	<%= link_to 'list of gardens', gardens_path, :class => 'link' %>
@@ -8,5 +8,5 @@
   <%= link_to 'sign in', new_user_session_path, :class => 'link' %> 
   <%= link_to 'sign up', new_user_registration_path, :class => 'link' %>
 <% end %>
-</footer>
+</header>
 

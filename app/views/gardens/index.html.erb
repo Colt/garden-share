@@ -1,19 +1,18 @@
 <nav><%= render "/layouts/footer" %></nav>
 <h1>Gardens.</h1>
-<% if current_user && (current_user.garden_id == 0 || current_user.garden_id == nil) %>
-	<%= button_to 'add a garden', new_garden_path, method: :get, :class => 'button' %>
-<% end %>
-
-
-	<% @gardens.each do |g| %>
-	<article class="content-a">
-		<section class="content-b">
+<article class="content-a">
+	<section class="content-b">
+		<% if current_user && (current_user.garden_id == 0 || current_user.garden_id == nil) %>
+			<%= button_to 'add a garden', new_garden_path, method: :get, :class => 'button' %>
+		<% end %>
+		
+		<% @gardens.each do |g| %>	
 			<a href="/gardens/<%= g.id %>" style="text-decoration:none;color:black;">
 		  <%= image_tag g.photo.url(:medium), :class => 'garden_image' %><br>
 		  <span class="neighborhood"><%= g.neighborhood %> | </span><span class="city"> <%= g.city %></span><br>
 		  <p class="short_description"><%= g.short_description %></p>
 			</a>
-		</section>
-	</article>	
-		  <br>
-	<% end %>
+		<% end %>
+	</section>
+</article>	
+<% binding.pry %>
