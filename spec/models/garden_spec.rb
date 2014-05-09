@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe Garden do
+
   before :each do #instantiates a garden before each test
     @garden = Garden.create(location: "414 Brannan Street, San Francisco", description: "Coworking space with a rooftop garden. 5 raised beds available.")
   end
@@ -22,4 +23,5 @@ describe Garden do
     garden = Garden.create(location: "414 Brannan Street, San Francisco")
     garden.should_not be_valid
   end
+
 end

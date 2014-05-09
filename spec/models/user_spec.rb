@@ -40,4 +40,5 @@ describe User do
     user = User.create(name: "Eve", email: "evelyn@eden.org")
     user.should_not be_valid
   end
+
 end

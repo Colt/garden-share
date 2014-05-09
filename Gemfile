@@ -27,7 +27,12 @@ gem 'jbuilder', '~> 1.2'
 # postgres database
 gem 'pg'
 
-gem 'bcrypt-ruby','3.1.2'
+
+gem 'devise'
+gem 'geocoder'
+gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'aws-sdk'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -38,7 +43,8 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'rspec-rails'
-  gem 'better_errors'
+
+  #gem 'better_errors'
 end
 
 group :production do
