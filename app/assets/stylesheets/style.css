@@ -56,8 +56,10 @@ h1 {
 	color: white;
 }
 .button_link {
-	color: black;
+	color: white;
 	text-decoration: none;
+	font-weight: normal;
+	font-size: .75em;
 }
 .button {
 	background-color: #BF9461;
@@ -86,10 +88,20 @@ h2 {
 	font-weight: normal;
 }
 h3 {
+	background-color: white;
+	display: inline;
 	font-size: 2.5em;
 	font-weight: normal;
 	margin: 5px;
-	line-height: 1em;
+	line-height: .5em;
+}
+p {
+	margin: 20px;
+	margin-left: 50px;
+	background-color: white;
+	display: block;
+	font-weight: bold;
+	max-width: 90%;
 }
 input#user_name, 
 input#user_email, 
@@ -111,32 +123,41 @@ textarea#garden_rules {
 	border-right: 5px solid black;
 	border-bottom: 5px solid black;
 	padding: 0;
-	margin: 10px;
+	margin: 20px 0 20px 0;
 	max-width: 90%;
 }
 .show {
 	display: inline-block;
 	vertical-align: top;
-	display:none;
 }
-.map {
-	display: inline-block;
+img.map {
+	margin: 20px 0 20px 0;
+	max-width: 90%;
 }
-.short_description {
+p.short_description {
+	margin: 0;
 	padding: 5px 20px 5px 20px;
+	width: 90%;
 }
 .neighborhood, .city {
 	font-size: 1.5em;
+}
+.city {
+	font-weight: bold;
 }
 .garden_info {
 	font-weight: normal;
 	padding: 10px;
 	text-align: left;
-	display: inline-block;
+	max-width: 90%;
 }
 
-@media only screen and (min-width : 1224px) {
+@media only screen and (min-width : 330px) {
 		.garden_info {
-			max-width: 50%;
+			margin-left: 30%;
+			margin-right: 30%;
 		}
-	}
+		p.short_description {
+			margin-left: 0;
+			display: inline-block;
+		}

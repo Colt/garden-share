@@ -1,5 +1,5 @@
 <nav><%= render "/layouts/footer" %></nav>
-<h1>Gardens.</h1>
+<h1>Garden Share.</h1>
 <article class="content-a">
 	<section class="content-b">
 		<% if current_user && (current_user.garden_id == 0 || current_user.garden_id == nil) %>
@@ -9,10 +9,9 @@
 		<% @gardens.each do |g| %>	
 			<a href="/gardens/<%= g.id %>" style="text-decoration:none;color:black;">
 		  <%= image_tag g.photo.url(:medium), :class => 'garden_image' %><br>
-		  <span class="neighborhood"><%= g.neighborhood %> | </span><span class="city"> <%= g.city %></span><br>
+		  <span class="neighborhood"><%= g.neighborhood %></span><br><span class="city"> <%= g.city %></span><br>
 		  <p class="short_description"><%= g.short_description %></p>
 			</a>
 		<% end %>
 	</section>
 </article>	
-<% binding.pry %>
