@@ -1,7 +1,7 @@
 <footer>
 <% if current_user %>
 	<% if request.env['PATH_INFO'] != gardens_path %>
-  	<%= link_to 'gardens', gardens_path, :class => 'link' %>
+  	<%= link_to 'list of gardens', gardens_path, :class => 'link' %>
   <% end %>
   <%= link_to 'sign out', destroy_user_session_path, method: :delete, :class => 'link' %>
 <% else %>

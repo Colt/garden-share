@@ -1,9 +1,13 @@
-							<%= form_for @garden do |f| %>
-  Address : 		<%= f.text_field :address %><br />
-  City : 				<%= f.text_field :city %><br />
-  Short Description: <%= f.text_field :short_description %><br />
-  Description : <%= f.text_area :description %><br />
-  Rules    : 		<%= f.text_area :rules %><br />
-  Garden Picture: <%= f.file_field :photo %><br />
-    							<%= f.submit 'submit' %>
-<% end %>
+<article class="content-a">
+	<section class="content-b">
+		<%= form_for @garden do |f| %>
+			<%= f.text_field :address, :placeholder => 'address' %><br />
+			<%= f.text_field :city, :placeholder => 'city' %><br />
+			<%= f.text_field :short_description, :placeholder => 'one sentence description of the garden' %><br />
+			<%= f.text_area :description, :placeholder => 'a long description of the garden' %><br />
+			<%= f.text_area :rules, :placeholder => 'garden rules' %><br />
+			<%= f.file_field :photo %><br />
+			<%= f.submit 'submit', :class => 'button' %>
+		<% end %>
+	</section>
+</article>

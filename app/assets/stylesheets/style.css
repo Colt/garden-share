@@ -1,12 +1,14 @@
 html, body {
 	height: 100%;
+	max-width: 100%;
 }
 body {
-	background-color: #7D947A;
+	background-color: #CCD6A7;
 	font-family: "Helvetica", "Arial", sans-serif;
 	font-weight: lighter;
 	padding: 0;
 	margin: 0;
+	line-height: 1.25em;
 }
 nav {
 	padding: 5px;
@@ -58,15 +60,21 @@ h1 {
 	text-decoration: none;
 }
 .button {
-	background-color: #F0E07A;
-	border: 1px solid #F0E07A;
+	background-color: #BF9461;
+	border-top: none;
+	border-left: none;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
 	border-radius: 2px;
+	color: white;
 	padding: 10px;
 	text-align: center;
 	font-weight: normal;
 	width: 33%;
 	margin: 0 auto;
 	margin-top: 20px;
+	margin-bottom: 20px;
+	-webkit-appearance:none;
 }
 .link {
 	text-decoration: none;
@@ -75,13 +83,52 @@ h1 {
 h2 {
 	font-size: 3em;
 	margin: 0;
+	font-weight: normal;
+}
+h3 {
+	font-size: 2.5em;
+	font-weight: normal;
+	margin: 5px;
+	line-height: 1em;
 }
 input#user_name, 
 input#user_email, 
 input#user_password, 
-input#user_password_confirmation {
+input#user_password_confirmation,
+input#garden_address,
+input#garden_city,
+input#garden_short_description,
+textarea#garden_description,
+textarea#garden_rules {
 	border: 1px solid white;
 	margin: 10px;
 	padding: 10px;
 	width: 50%;
+	-webkit-appearance:none;
+}
+.garden_image {
+	border-radius: 10px;
+	border-right: 5px solid black;
+	border-bottom: 5px solid black;
+	padding: 0;
+	margin: 10px;
+	max-width: 90%;
+	/*display: inline-block;*/
+	/*vertical-align: top;*/
+}
+.map {
+	display: inline-block;
+}
+.short_description {
+	padding: 5px 20px 5px 20px;
+	text-align: left;
+}
+.neighborhood, .city {
+	font-size: 1.5em;
+}
+.garden_info {
+	font-weight: normal;
+	padding: 10px;
+	text-align: left;
+	display: inline-block;
 }

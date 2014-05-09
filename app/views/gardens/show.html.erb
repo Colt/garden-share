@@ -1,21 +1,26 @@
-<%= image_tag @garden.photo.url(:medium) %>
-<h3>Address:</h3><%= @garden.address %>
-<h3>Neighborhood:</h3><%= @garden.neighborhood %>
-<h3>City:</h3><%= @garden.city %> (<%= @garden.zipcode %>)
-<h3>Short Description:</h3><%= @garden.short_description %>
-<h3>Description:</h3><%= @garden.description %>
-<h3>Guidelines:</h3><%= @garden.rules %>
-<br>
+<nav><%= render "/layouts/footer" %></nav>
+<article class="content-a">
+	<section class="content-b">
+		<div>
+				<%= image_tag @garden.photo.url(:medium), :class => 'garden_image' %>
+				<div class="garden_info">
+				<h3>Address:</h3><p><%= @garden.address %></p>
+				<h3>Neighborhood:</h3><p><%= @garden.neighborhood %></p>
+				<h3>City:</h3><p><%= @garden.city %> (<%= @garden.zipcode %>)</p>
+				<h3>Short Description:</h3><p><%= @garden.short_description %></p>
+				<h3>Description:</h3><p><%= @garden.description %></p>
+				<h3>Guidelines:</h3><p><%= @garden.rules %></p>
+			</div>
+		</div>
+		<div class="map"><%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x300&sensor=false&zoom=15&markers=#{@garden.geo_location}" %></div>
+		<% if current_user.garden_id == 0 || current_user.id == @garden.users.first.id %>
+				<%= button_to 'edit', edit_garden_path, method: :get, :class => 'button' %>
+				<%= button_to 'delete', @garden, method: :delete, :class => 'button' %>
+		<% else %>
+			<%= @garden.users.first.name %><br>
+			<%= mail_to @garden.users.first.email, 'contact host', subject: 'Garden Share: I would like to learn more about your garden.', body: current_user.name %>
+		<% end %>
 
-
-<% if current_user.garden_id == 0 || current_user.id == @garden.users.first.id %>
-	<%= button_to 'edit', edit_garden_path, method: :get %>
-	<%= button_to 'delete', @garden, method: :delete %>
-<% else %>
-	<%= @garden.users.first.name %><br>
-	<%= mail_to @garden.users.first.email, 'contact host', subject: 'Garden Share: I would like to learn more about your garden.', body: current_user.name %>
-<% end %>
-
-<br>
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x300&sensor=false&zoom=15&markers=#{@garden.geo_location}" %>
-<%= render "/layouts/footer" %>
+		
+	</section>
+</article>
