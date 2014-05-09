@@ -153,11 +153,12 @@ p.short_description {
 }
 
 @media only screen and (min-width : 330px) {
-		.garden_info {
-			margin-left: 30%;
-			margin-right: 30%;
-		}
-		p.short_description {
-			margin-left: 0;
-			display: inline-block;
-		}
+	.garden_info {
+		margin-left: 30%;
+		margin-right: 30%;
+	}
+	p.short_description {
+		margin-left: 0;
+		display: inline-block;
+	}
+}
