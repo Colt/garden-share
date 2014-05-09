@@ -1,3 +1,4 @@
+<nav><%= render "/layouts/footer" %></nav>
 <h1>Gardens.</h1>
 <% if current_user && (current_user.garden_id == 0 || current_user.garden_id == nil) %>
 	<%= button_to 'add a garden', new_garden_path, method: :get %>
@@ -12,5 +13,3 @@
 </article></a>
   <br>
 <% end %>
-
-<%= render "/layouts/footer" %>

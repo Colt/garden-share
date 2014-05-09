@@ -6,12 +6,11 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 </head>
-<body style="font-family:sans-serif;">
+<body>
 
 <%= yield %>
 
-<hr>
-<%= current_user.inspect %>
 </body>
 </html>
