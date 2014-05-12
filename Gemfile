@@ -43,6 +43,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
 
   #gem 'better_errors'
 end
